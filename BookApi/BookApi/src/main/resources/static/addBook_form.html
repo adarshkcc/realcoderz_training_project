@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Book</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="addbook.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div
+		style="margin-top: 2%; display: flex; justify-content: center; align-items: center;">
+		<div>
+			<h2 align="center">Add Book</h2>
+			<form>
+
+				<p>
+				<div>
+					<input type="text" class="form-control" id="title" placeholder="Enter the Title" required />
+				</div>
+				</p>
+				<p>
+				<div>
+					<input type="text" class="form-control" id="desc" placeholder="Enter the Description" required/>
+				</div>
+				</p>
+				<p>
+				<div>
+					<input type="number" class="form-control" id="price" placeholder="Enter the price" required />
+				</div>
+				</p>
+				<p>
+				<div>
+					<input type="number" class="form-control" id="rating" placeholder="Enter the rating" required/>
+				</div>
+				</p>
+
+<p>
+				<div>
+					<input type="text" class="form-control" id="author_name" placeholder="Enter author name" required />
+				</div>
+				</p>
+				<p>
+				<div>
+					<input type="number" class="form-control" id="author_id" placeholder="Enter author id" required/>
+				</div>
+				</p>
+				
+				<div > 
+					<select  id="category" class="custom-select" Style="width:100%">
+					<option value="Fiction">Fiction</option>
+					<option value="Mystery">Mystery</option>
+					<option value="Romantic">Romantic</option>
+					<option value="Action">Action</option>
+					<option value="Sad">Sad</option>
+					</select>
+				</div>
+				
+				<p>
+				<div>
+					<input type="date"  class="form-control" id="date" placeholder="Enter published date" />
+				</div>
+				</p>
+
+				<p>
+				<div>
+					<input type="text"  class="form-control" id="url" placeholder="Enter the bookimage url" />
+				</div>
+				</p>
+				
+				<p>
+				<div>
+					<input type="text" class="form-control" id="pdf" placeholder="Enter the pdf url" />
+				</div>
+				</p>
+				
+				<p>
+				<div>
+					<input type="text" class="form-control" id="stock" placeholder="Enter stock" />
+				</div>
+				</p>
+				<div>
+					<p align="center">
+						<button type="submit"class=" btn btn-success" id="btnSave">Submit</button>
+					</p>
+
+				</div>
+				
+
+			</form>
+			<a href="mainpage.html"><p align="center">
+					<button class ="btn btn-danger">Home</button>
+				</p></a>
+		</div>
+	</div>
+</body>
+
+
+<script>
+
+
+
+
+	$(document).ready(function() {
+		$("#btnSave").click(function(e) {
+			e.preventDefault();
+			var bookData = {
+					"author_name" : $("#author_name").val(),
+					"author_id" : $("#author_id").val(),
+					"stock" : $("#stock").val(),
+				books : [ {
+					"title" : $("#title").val(),
+					"desc" : $("#desc").val(),
+					"date" : $("#date").val(),
+					"price" : $("#price").val(),
+					"rating" : $("#rating").val(),
+					"bookUrl" : $("#url").val(),
+					"category" : $("#category").val(),
+					"pdf" : $("#pdf").val()
+					
+				} ]
+			};
+
+			$.ajax({
+				type : "POST",
+				contentType : "application/json",
+				url : "/api/addNewBook",
+				data : JSON.stringify(bookData),
+				dataType : 'json',
+
+				success : function(data) {
+      console.log(data);
+      
+      if(data==true)
+					//alert("Book added successfully!!!!");
+      window.location="http://localhost:8087/bookadded.html"
+      else
+    	//  alert("Enter the valid details");
+    	  window.location="http://localhost:8087/invalidprice.html"
+				},
+				error : function(e) {
+
+					alert("Error!!!!");
+
+				}
+			});
+
+		});
+	}); 
+</script>
+
+</html>

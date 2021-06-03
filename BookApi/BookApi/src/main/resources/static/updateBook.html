@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Modify Book</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<style>
+
+body{
+  background-image: url(janko-ferlic-sfL_QOnmy00-unsplash.jpg);
+}
+
+h2{
+  font-style: italic;
+  color: white;
+  font-size:40px
+}
+
+input{
+  size: 100px;
+  padding:3%;
+  margin-left:30%;
+}
+
+</style>
+</head>
+<body>
+	<div
+		style=" display: flex; justify-content: center; align-items: center;">
+		<div>
+			<h2 align="center">Modify  Book In Store</h2>
+			<form>
+
+				<p>
+				<div>
+					<input type="text" id="id" placeholder="Enter the Book Id" />
+				</div>
+				</p>
+				
+				<p>
+				<div>
+					<input type="text" id="price" placeholder="Enter the Book Price" />
+				</div>
+				</p>
+				<div>
+					<p align="center">
+						<button type="submit" id="btnSave">Submit</button>
+					</p>
+
+				</div>
+				
+
+			</form>
+				</body>
+
+
+<script>
+
+
+
+
+	$(document).ready(function() {
+		$("#btnSave").click(function(e) {
+			
+			
+e.preventDefault()
+console.log($("#id").val()+"/"+$("#price").val());
+			$.ajax({
+			    type : "PUT",
+			    url : "/book/"+$("#id").val()+"/"+$("#price").val(),
+			 data:{"id":$("id").val()},
+			    success: function (result) {       
+			           console.log(result);  
+			           alert("Book price updated")
+			           //window.location="myCart.html";
+			    },
+			    error: function (e) {
+			    	alert("Something went Wrong");
+			        console.log(e);
+			    }
+			})   
+
+			
+		});
+	}); 
+</script>
+
+</html>

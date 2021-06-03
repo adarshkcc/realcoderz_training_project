@@ -1,0 +1,230 @@
+
+
+.mediaViewInfo {
+	--web-view-name: Web 1366 – 1;
+	--web-view-id: Web_1366__1;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Web_1366__1;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+
+#Web_1366__1 {
+	position: absolute;
+	width: 1366px;
+	height: 768px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: Web 1366 – 1;
+	--web-view-id: Web_1366__1;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+#Path_4 {
+	fill: rgba(0,0,0,0);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_4 {
+	overflow: visible;
+	position: absolute;
+	width: 1px;
+	height: 774.822px;
+	left: 543.684px;
+	top: 0.286px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Welcome__Back {
+	left: 138px;
+	top: 136px;
+	position: absolute;
+	overflow: visible;
+	width: 263px;
+	height: 160px;
+	text-align: center;
+	font-family: Luminari;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 60px;
+	color: rgba(27,28,17,1);
+}
+#Path_1 {
+	fill: transparent;
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_1 {
+	overflow: visible;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	left: 102.355px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_2 {
+	fill: rgba(191,213,27,1);
+	stroke: rgba(112,112,112,0.149);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_2 {
+	overflow: visible;
+	position: absolute;
+	width: 532.216px;
+	height: 763.872px;
+	left: 0px;
+	top: 4.824px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_3 {
+	fill: rgba(207,234,117,0.235);
+	stroke: rgba(112,112,112,0.114);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Path_3 {
+	overflow: visible;
+	position: absolute;
+	width: 542.076px;
+	height: 780.533px;
+	left: 0px;
+	top: -11.448px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Login {
+	left: 720px;
+	top: 90px;
+	position: absolute;
+	overflow: visible;
+	width: 368px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Apple Braille;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 39px;
+	color: rgba(27,28,17,1);
+}
+#User_Name {
+	left: 705px;
+	top: 152px;
+	position: absolute;
+	overflow: visible;
+	width: 141px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Ayuthaya;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 26px;
+	color: rgba(27,28,17,1);
+}
+/* ##Rectangle_1 {
+	fill: rgba(238,248,183,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.#Rectangle_1 {
+	position: absolute;
+	overflow: visible;
+	width: 450px;
+	height: 52px;
+	left: 705px;
+	top: 188px;
+} */
+#Password {
+	left: 705px;
+	top: 312px;
+	position: absolute;
+	overflow: visible;
+	width: 125px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Ayuthaya;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 26px;
+	color: rgba(27,28,17,1);
+}
+#image_processing20200909-17917 {
+	position: absolute;
+	width: 440px;
+	height: 220px;
+	left: 1000px;
+	top: 415px;
+	overflow: visible;
+}
+ input{
+  box-sizing: border-box;
+  background-color: #F0F8BF;
+ border: 1px solid #000000;
+ width: 456px;
+ height: 46px;
+ font-size: 20px;
+ font-family:Ayuthaya;
+}
+
+.login-box{
+	width:280px;
+	position:absolute;
+	top:50%;
+	left: 40%;
+	transform: translate(-50%,-50%);
+	/color: white;/
+}
+
+/* .SignIn{
+  left: 854px;
+  top: 423px;
+  position: absolute;
+  overflow: visible;
+  width: 95px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Ayuthaya;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  color: rgba(33,36,6,1);
+}
+
+.SignUp{
+  left: 854px;
+	top: 476px;
+	position: absolute;
+	overflow: visible;
+	width: 95px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Ayuthaya;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 26px;
+	color: rgba(33,36,6,1);
+} */

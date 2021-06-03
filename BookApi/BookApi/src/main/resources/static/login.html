@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Login Page</title>
+<link rel="stylesheet" href="login.css">
+<script
+	src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<div id="LogIn">
+		<svg class="Path_4" viewBox="12.184 0.286 1 774.822">
+    		<path id="Path_4"
+				d="M 12.18389892578125 0.2862599790096283 L 12.18389892578125 320.4744873046875 L 12.18389892578125 775.1078491210938">
+    		</path>
+    	</svg>
+		<div id="Welcome__Back">
+			<span>Welcome <br />Back!
+			</span>
+		</div>
+		<svg class="Path_1" viewBox="102.355 0 1 1">
+    		<path id="Path_1" d="M 102.3550796508789 0">
+    		</path>
+    	</svg>
+		<svg class="Path_2" viewBox="0 4.824 531.5 763.176">
+    		<path id="Path_2"
+				d="M 0 4.824178695678711 C 139.5301361083984 136.5269622802734 197.5523834228516 394.1147155761719 197.5523834228516 394.1147155761719 L 531.5 767.9999389648438">
+    		</path>
+    	</svg>
+		<svg class="Path_3" viewBox="0 -11.448 540.534 779.448">
+    		<path id="Path_3"
+				d="M 0 768 C 264.626220703125 470.5130920410156 540.534423828125 416.9982604980469 540.534423828125 416.9982604980469 L 216.4693450927734 313.583740234375 L 540.534423828125 249.102294921875 L 206.8735504150391 -11.44781970977783 L 110.943977355957 160.2452239990234">
+    		</path>
+    	</svg>
+		<div id="Login">
+			<span>LogIn</span>
+		</div>
+		<form id="login"
+			style="padding-left: 888px !important; padding-top: 430px !important; padding-right: 0px !important; border-right-style: solid !important; border-right-width: 0px !important;">
+			<div id="User_Name">
+				<label for="name">User Name</label> <br> <input type="text"
+					name="username" id="name" placeholder="User Name" required>
+			</div>
+			<div id="Password">
+				<label for="pass">Password</label> <br> <input type="password"
+					name="user password" id="pass" placeholder="Password" required />
+			</div>
+			<button
+				style="border-top-left-radius: 9px !important; border-top-right-radius: 9px !important; border-bottom-right-radius: 9px !important; border-bottom-left-radius: 9px !important; padding-left: 14px !important; padding-right: 14px !important;"
+				type="submit" id="btn" class="btn btn-warning">SignIn</button>
+		</form>
+		
+		<a href="UserPage.html"
+			style="margin-left: 887px !important; margin-top: 10px !important; border-top-left-radius: 9px !important; border-top-right-radius: 9px !important; border-bottom-right-radius: 9px !important; border-bottom-left-radius: 9px !important;"
+			class="btn btn-warning">SignUp</a> <img
+			id="image_processing20200909-17917" src="login.jpg"
+			srcset="login.jpg 1x, login.jpg 2x">
+
+	</div>
+</body>
+
+<script>  
+    $(document).ready(function () {  
+        $("#login").submit(function (e) { 
+        	e.preventDefault();
+        	var name=$("#name").val();
+        	var pass=$("#pass").val();
+        	var entered_data={
+					userName:name,
+					password:pass};
+
+        	$.ajax({
+        		type : "POST",
+        		contentType : "application/json",
+        		url : "/login",
+        		data : JSON.stringify(entered_data),
+        		dataType : 'json',				
+        		
+        	 success: function (received_data) {
+        		 console.log(received_data);
+        		var val= received_data.find((data)=>{
+        			 
+ 					if((data.userName==name) &&(data.password==pass))
+ 						{
+ 						return true;
+ 					
+ 						}
+ 					return false;
+        		});
+ 					
+ 					if(val){
+ 						if((val.userName=="Admin")&&(val.password=="Admin@1234"))
+ 						window.location="http://localhost:8087/mainpage.html";
+ 						else
+ 							window.location="http://localhost:8087/bookdetails.html";
+ 					}
+ 						
+ 					else{ 						
+ 						//alert("Invalid login details!!!! Please login again" );
+ 					window.location="http://localhost:8087/invalidlogindetails.html";}
+ 				
+
+             },
+             error: function (e) {
+  
+            	  window.location="http://localhost:8087/login.html";
+             }
+        	});
+  
+        });  
+    });  
+  
+</script>
+</html>

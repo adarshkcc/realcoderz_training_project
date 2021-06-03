@@ -1,0 +1,26 @@
+.input{
+	box-shadow: 10px 10px 30px ;
+	background-color:#055160;
+	font-size:24px;
+	
+}
+.styling{
+	display:inline-block;
+	background: none;
+	box-shadow: 10px 10px 30px ;
+
+
+		margin: 20px;
+	text-align: center;
+
+}
+.styling:hover{
+  
+	transition: all 1s;
+	transform:scale(1.1);
+}
+
+.btjs{
+	width:100%;
+	cursor:pointer;
+}

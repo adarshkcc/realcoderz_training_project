@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="bookdetails.css">
+<!-- <script type="text/javascript" src="bookdetails.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+
+</head>
+<body >
+
+<h1 align="center"><I>WELCOME TO E-BOOK STORE</I></h1>
+<p align='center'><a href="mainpage.html"><button>Go Back</button></a></p>
+
+<div  id="mydiv">
+
+
+</div>
+
+
+
+</body>
+
+<script>
+
+
+ $(document).ready(function() {
+	$.getJSON('/api/books', function(data) {
+		renderHTML(data);
+		
+		
+	});
+});
+	
+
+
+
+function renderHTML(data)
+{ 
+console.log(data)
+data.map((d)=>{
+	d.books.map(b=>{
+		var image ='<img src='+b.bookUrl+' height="250" width="200">';
+
+		var mydiv=document.getElementById('mydiv');
+
+		mydiv.insertAdjacentHTML('beforeend',
+			   '<div class="styling">'+ image+'</div>');
+	})
+
+})
+
+} 
+</script>
+</html>
